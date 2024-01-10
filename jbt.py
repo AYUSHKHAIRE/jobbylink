@@ -213,7 +213,7 @@ def skillplotter():
         zip(skill_name_list, skill_count_list), key=lambda x: x[1], reverse=True)
     skill_name_list, skill_count_list = map(list, zip(*sorted_skills))
     fig, ax = plt.subplots(figsize=(12, 20))
-    color_palette = sns.color_palette("viridis", len(categories))
+    color_palette = sns.color_palette("viridis", len(skill_count_list))
     sns.barplot(x=skill_count_list[:60],
                 y=skill_name_list[:60][::-1],palette=color_palette)
     ax.set_xlabel('Count')
